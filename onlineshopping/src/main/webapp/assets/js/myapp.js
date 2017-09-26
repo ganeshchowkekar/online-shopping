@@ -11,10 +11,6 @@ $(function(){
 		$('#contact').addClass('active');
 		break;
 		
-	case 'Services':
-		$('#services').addClass('active');
-		break;	
-		
 	default :
 		$('#home').addClass('active');
 		break;	
