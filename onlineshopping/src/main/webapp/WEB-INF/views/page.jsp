@@ -23,11 +23,15 @@
 
 <script>
 	window.menu = '${title}'
+	window.contextRoot='${contextRoot}'
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+
+<!--Jquery data table CSS  -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -64,6 +68,11 @@
 				test="${userClicksAllProducts==true or userClicksCategoryProducts==true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
+			
+			<!-- Load only when user clicks show product -->
+			<c:if test="${userClicksShowProduct==true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
 
 		</div>
 
@@ -74,6 +83,10 @@
 		<script src="${js}/jquery.min.js"></script>
 		<script src="${js}/popper.min.js"></script>
 		<script src="${js}/bootstrap.min.js"></script>
+		
+		<!-- JQuery DATA Table Plugin  -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		<script src="${js}/dataTables.bootstrap4.js"></script>
 
 		<!-- self coded JS -->
 		<script src="${js}/myapp1.js"></script>   
